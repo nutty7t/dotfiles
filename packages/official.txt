@@ -1,0 +1,47 @@
+# Official Arch Linux Repository Packages
+# https://www.archlinux.org/packages/
+
+base-devel    | tools for building (compiling and linking)
+bat           | cat clone with syntax highlighting and git integration
+clingo        | grounder and solver for logic programs
+clojure       | clojure programming language
+ctags         | indexes identifiers in source code for easy locating
+diff-so-fancy | improved human-readable git diffs
+docker        | create and run application containers
+elixir        | elixir programming language
+entr          | run arbitrary commands when files change
+erlang        | erlang programming language
+exa           | modern replacement for ls (colors, tree view, etc.)
+fzf           | fast command line fuzzy finder
+gdb           | GNU debugger for tracing through programs
+git           | the stupid content tracker (seriously! see the man page)
+go            | go programming language
+htop          | interactive process viewer (top, but better)
+httpie        | curl, but for humans (syntax highlighting, JSON support)
+ipython       | interactive python command shell
+jdk-openjdk   | java development kit
+jq            | lightweight and flexible command-line JSON processor
+neofetch      | command-line system information tool
+neovim        | vim-fork focused on extensibility and usability
+nodejs        | javascript runtime built on Chrome's V8 engine
+npm           | javascript package manager
+p7zip         | file archiver with high compression ratio
+pandoc        | universal document converter
+php           | php programming language
+python        | python programming language (v3.x)
+python2       | python programming language (v2.x)
+racket        | racket (formerly PLT Scheme) programming language
+ranger        | file manager with vi key bindings
+ripgrep       | recursively searches current directory for a regex pattern
+ruby          | ruby programming language
+rust          | rust programming language
+sqlite        | serverless relational database
+swi-prolog    | prolog programming language
+tig           | text-mode interface for git repositories
+tldr          | simplified and community-driven man pages
+tmux          | terminal multiplexer (multiple terminals on one screen)
+tree          | recursive directory listing pretty printer
+wget          | retrieve files via HTTP(S) and FTP
+yarn          | another JavaScript package manager
+zsh           | unix shell built on top of bash with additional features
+

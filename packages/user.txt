@@ -1,0 +1,11 @@
+# Arch User Repository (AUR) Packages
+# https://aur.archlinux.org/packages/
+
+fselect         | find files with SQL-like queries
+kubectx         | easy switching between kubernetes clusters
+kubernetes-bin  | container orchestration system
+kubernetes-helm | tool for managing kubernetes charts
+leiningen       | clojure build automation and dependency management
+mongodb-bin     | document-oriented NoSQL database
+python-pipenv   | python package manager
+
