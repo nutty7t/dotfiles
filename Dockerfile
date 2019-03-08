@@ -66,3 +66,10 @@ RUN ln \
 	/usr/share/zoneinfo/America/Phoenix \
 	/etc/localtime
 
+# Add nutty user (that's me!)
+RUN useradd --create-home --groups sudo nutty && \
+	echo '%sudo ALL=(ALL) NOPASSWD:ALL' >>/etc/sudoers
+
+USER nutty
+WORKDIR /home/nutty
+
