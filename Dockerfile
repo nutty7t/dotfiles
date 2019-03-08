@@ -13,20 +13,20 @@ RUN pacman \
 # Running makepkg is disallowed as root, and yay refuses to install AUR
 # packages as root. To workaround this, a normal user (named 'yay') is created
 # with superuser privileges for the sole purpose of installing and running yay.
-RUN groupadd --system sudo && \
-	useradd --create-home --groups sudo yay && \
-	echo '%sudo ALL=(ALL) NOPASSWD:ALL' >>/etc/sudoers
+RUN groupadd --system sudo \
+	&& useradd --create-home --groups sudo yay \
+	&& echo '%sudo ALL=(ALL) NOPASSWD:ALL' >>/etc/sudoers
 
 # Install yay (AUR helper)
-RUN git clone https://aur.archlinux.org/yay.git /home/yay/install && \
-	chown yay /home/yay/install && \
-	su \
+RUN git clone https://aur.archlinux.org/yay.git /home/yay/install \
+	&& chown yay /home/yay/install \
+	&& su \
 		--login yay \
 		--command="cd install && makepkg \
 			--install \
 			--noconfirm \
-			--syncdeps" && \
-	rm --recursive /home/yay/install
+			--syncdeps" \
+	&& rm --recursive /home/yay/install
 
 # Install packages
 RUN mkdir packages
@@ -67,8 +67,8 @@ RUN ln \
 	/etc/localtime
 
 # Add nutty user (that's me!)
-RUN useradd --create-home --groups sudo nutty && \
-	echo '%sudo ALL=(ALL) NOPASSWD:ALL' >>/etc/sudoers
+RUN useradd --create-home --groups sudo nutty \
+	&& echo '%sudo ALL=(ALL) NOPASSWD:ALL' >>/etc/sudoers
 
 USER nutty
 WORKDIR /home/nutty
