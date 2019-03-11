@@ -71,14 +71,25 @@ RUN useradd --create-home --groups sudo nutty \
 	&& echo '%sudo ALL=(ALL) NOPASSWD:ALL' >>/etc/sudoers
 
 USER nutty
-RUN mkdir /home/nutty/Code
-WORKDIR /home/nutty/Code
 
 # Install dotfiles
+RUN mkdir /home/nutty/Code
+WORKDIR /home/nutty/Code
 RUN git clone https://github.com/nutty7t/dotfiles
-RUN ln --force --symbolic ~/Code/dotfiles/vim ~/.vimrc
 
 # (just because I prefer .vimrc over init.vim)
 RUN mkdir --parents ~/.config/nvim
+RUN ln --force --symbolic ~/Code/dotfiles/vim ~/.vimrc
 RUN ln --force --symbolic ~/.vimrc/main.vim ~/.config/nvim/init.vim
+
+# Install vim-plug
+RUN curl \
+	--create-dirs \
+	--fail \
+	--location \
+	--output ~/.local/share/nvim/site/autoload/plug.vim \
+	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# Install vim plugins
+RUN nvim +PlugInstall +qall
 
