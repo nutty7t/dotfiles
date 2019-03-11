@@ -71,5 +71,14 @@ RUN useradd --create-home --groups sudo nutty \
 	&& echo '%sudo ALL=(ALL) NOPASSWD:ALL' >>/etc/sudoers
 
 USER nutty
-WORKDIR /home/nutty
+RUN mkdir /home/nutty/Code
+WORKDIR /home/nutty/Code
+
+# Install dotfiles
+RUN git clone https://github.com/nutty7t/dotfiles
+RUN ln --force --symbolic ~/Code/dotfiles/vim ~/.vimrc
+
+# (just because I prefer .vimrc over init.vim)
+RUN mkdir --parents ~/.config/nvim
+RUN ln --force --symbolic ~/.vimrc/main.vim ~/.config/nvim/init.vim
 
