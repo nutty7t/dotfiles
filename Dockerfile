@@ -78,9 +78,9 @@ WORKDIR /home/nutty/Code
 RUN git clone https://github.com/nutty7t/dotfiles
 
 # (just because I prefer .vimrc over init.vim)
-RUN mkdir --parents ~/.config/nvim
-RUN ln --force --symbolic ~/Code/dotfiles/vim ~/.vimrc
-RUN ln --force --symbolic ~/.vimrc/main.vim ~/.config/nvim/init.vim
+RUN mkdir --parents ~/.config/nvim \
+	&& ln --force --symbolic ~/Code/dotfiles/vim ~/.vimrc \
+	&& ln --force --symbolic ~/.vimrc/main.vim ~/.config/nvim/init.vim
 
 # Install vim-plug
 RUN curl \
@@ -113,4 +113,5 @@ RUN nvim +PlugInstall +qall \
 		| head --lines=1 \
 		| egrep --only-matching '[0-9+]' \
 	))
+
 
