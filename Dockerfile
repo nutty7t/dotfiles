@@ -90,6 +90,27 @@ RUN curl \
 	--output ~/.local/share/nvim/site/autoload/plug.vim \
 	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-# Install vim plugins
-RUN nvim +PlugInstall +qall
+# Install vim plugins. nvim won't exit with a non-zero exit code if
+# +PlugInstall fails so the output of +PlugStatus needs to be parsed in order
+# to determine whether the installation succeeded or not.
+#
+#    Finished. 0 error(s).
+#    [====================]
+#
+#    - foobar: OK
+#    - bazqux: OK
+#        .     .
+#        .     .
+#        .     .
+#
+# In a subshell, exit with the status code as the number of errors that
+# occurred when checking the status of the plugins so that the docker build
+# fails if there are any errors.
+RUN nvim +PlugInstall +qall \
+	&& nvim +PlugStatus +"w PlugStatus" +qall \
+	&& (exit $( \
+		cat PlugStatus \
+		| head --lines=1 \
+		| egrep --only-matching '[0-9+]' \
+	))
 
