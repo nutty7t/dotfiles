@@ -113,5 +113,5 @@ RUN nvim +PlugInstall +qall \
 		| head --lines=1 \
 		| egrep --only-matching '[0-9+]' \
 	))
-
+	&& rm PlugStatus
 
