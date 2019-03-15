@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 set -e
+set -x
 
 # Create some symbolic links, creating needless indirection, just
 # because I prefer .vimrc over init.vim.
