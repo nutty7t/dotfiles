@@ -26,10 +26,16 @@ alias neofetch='echo && neofetch'
 #                                   #
 # ═══════════ [WARNING] ═══════════ #
 
+function __man {
+	man $* \
+		| col --no-backspaces \
+		| nvim -R -c 'set ft=man nomod nolist' -
+}
+
 function __woman {
 	tldr $1 | head --lines=-3
 }
 
-alias woman='man'
 alias man='__woman'
+alias woman='__man'
 
