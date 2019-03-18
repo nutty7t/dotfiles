@@ -1,9 +1,54 @@
 # ──────────────────────────────────────────────────────────────────────
-#  ZSH and Pretty Colors
+#  Z Shell
 # ──────────────────────────────────────────────────────────────────────
 
+# Use the awesome shell.
 set -g default-command /usr/sbin/zsh
+
+# ──────────────────────────────────────────────────────────────────────
+#  Status Bar
+# ──────────────────────────────────────────────────────────────────────
+
+# Enable 256-color terminal.
 set -g default-terminal "screen-256color"
+
+# Window list is positioned in the middle.
+set-option -g status-justify centre
+
+# Automatically rename windows.
+setw -g automatic-rename on
+
+# I like the color blue.
+set -g status-bg blue
+
+# Maximum length of left component.
+set -g status-left-length 20
+
+set-option -g status-left \
+	'#[fg=white,bold] nutty7t (ナッティ) '
+#	                  └─ Internet Handle
+
+set-window-option -g window-status-format \
+	'#[fg=white] #W '
+#	              └─ Window Name
+
+set-window-option -g window-status-current-format \
+	'#[bg=white,fg=blue,bold] #W '
+#	                          └─ Window Name
+
+set -g status-right \
+	'#[bg=blue,fg=white,bold] %Y-%m-%d <> %I:%M %p '
+#	                          │  │  │     │  │  └─ AM/PM
+#	                          │  │  │     │  │
+#	                          │  │  │     │  └─ Minute
+#	                          │  │  │     │
+#	                          │  │  │     └─ Hour (12-hours)
+#	                          │  │  │
+#	                          │  │  └─ Day
+#	                          │  │
+#	                          │  └─ Month
+#	                          │
+#	                          └─ Year
 
 # ──────────────────────────────────────────────────────────────────────
 #  General Settings
