@@ -40,6 +40,7 @@ pacman \
 	--refresh \
 	--sync \
 	--sysupgrade \
+	base \
 	base-devel \
 	git
 
