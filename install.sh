@@ -60,7 +60,16 @@ sed \
 #  Symlink the dotfiles
 # ----------------------------------------------------------------------
 
-find -name '*.symlink' \
+# (because we might run this as root)
+export NUTTY_HOME="/home/nutty"
+
+if [[ ! -d ${NUTTY_HOME}/dotfiles ]]; then
+	git clone https://github.com/nutty7t/raspberry ${NUTTY_HOME}/dotfiles
+else
+	git -C ${NUTTY_HOME}/dotfiles pull
+fi
+
+find ${NUTTY_HOME}/dotfiles -name '*.symlink' \
 	| xargs \
 		--replace={} \
 		--max-args=1 \
@@ -68,7 +77,7 @@ find -name '*.symlink' \
 			--force \
 			--symbolic \
 			--verbose \
-			{} \
+			$(realpath {}) \
 			/home/nutty/.$(basename {} .symlink)'
 
 # ----------------------------------------------------------------------
