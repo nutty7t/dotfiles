@@ -5,16 +5,16 @@ set -x
 
 # Create some symbolic links, creating needless indirection, just
 # because I prefer .vimrc over init.vim.
-mkdir --parents ${NUTTY_HOME}/.config/nvim \
-	&& ln --force --symbolic ${NUTTY_HOME}/Code/dotfiles/vim ${NUTTY_HOME}/.vimrc \
-	&& ln --force --symbolic ${NUTTY_HOME}/.vimrc/main.vim ${NUTTY_HOME}/.config/nvim/init.vim
+mkdir --parents ~/.config/nvim \
+	&& ln --force --symbolic ~/Code/dotfiles/vim ~/.vimrc \
+	&& ln --force --symbolic ~/.vimrc/main.vim ~/.config/nvim/init.vim
 
 # Install vim-plug.
 curl \
 	--create-dirs \
 	--fail \
 	--location \
-	--output ${NUTTY_HOME}/.local/share/nvim/site/autoload/plug.vim \
+	--output ~/.local/share/nvim/site/autoload/plug.vim \
 	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Allow support for Python plugins in nvim.

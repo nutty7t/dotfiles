@@ -30,6 +30,7 @@ p7zip         | file archiver with high compression ratio
 pandoc        | universal document converter
 php           | php programming language
 python        | python programming language (v3.x)
+python-pip    | tool for installing python packages
 python2       | python programming language (v2.x)
 ranger        | file manager with vi key bindings
 ripgrep       | recursively searches current directory for a regex pattern

@@ -3,7 +3,7 @@
 set -e
 set -x
 
-plugins="${NUTTY_HOME}/.zsh_plugins"
+plugins="~/.zsh_plugins"
 
 # ----------------------------------------------------------------------
 #  Clone plugin repositories
@@ -50,10 +50,10 @@ sudo ln \
 	"${spaceship_zsh}" \
 	"${site_functions}/prompt_spaceship_setup"
 
-mkdir --parents ${NUTTY_HOME}/.zfunctions
+mkdir --parents ~/.zfunctions
 ln \
 	--force \
 	--symbolic \
 	"${spaceship_zsh}" \
-	"${NUTTY_HOME}/.zfunctions/prompt_spaceship_setup"
+	"~/.zfunctions/prompt_spaceship_setup"
 

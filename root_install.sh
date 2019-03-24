@@ -57,36 +57,6 @@ sed \
 	/etc/sudoers
 
 # ----------------------------------------------------------------------
-#  Symlink the dotfiles
-# ----------------------------------------------------------------------
-
-# (because we might run this as root)
-export NUTTY_HOME="/home/nutty"
-
-if [[ ! -d ${NUTTY_HOME}/dotfiles ]]; then
-	git clone https://github.com/nutty7t/raspberry ${NUTTY_HOME}/dotfiles
-else
-	git -C ${NUTTY_HOME}/dotfiles pull
-fi
-
-find ${NUTTY_HOME}/dotfiles -name '*.symlink' \
-	| xargs \
-		--replace={} \
-		--max-args=1 \
-		bash -c 'ln \
-			--force \
-			--symbolic \
-			--verbose \
-			$(realpath {}) \
-			/home/nutty/.$(basename {} .symlink)'
-
-# ----------------------------------------------------------------------
-#  Run the installation scripts
-# ----------------------------------------------------------------------
-
-find -name '_install.sh' | xargs --max-args=1 bash
-
-# ----------------------------------------------------------------------
 #  Output script success
 # ----------------------------------------------------------------------
 
