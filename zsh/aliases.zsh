@@ -1,10 +1,8 @@
 alias reload!='clear && source ~/.zshrc'
 
-alias ls='exa --group-directories-first'
-alias la='exa --group-directories-first --all'
-alias ll='exa --group-directories-first --long'
-alias lst='exa --group-directories-first --tree'
-alias llt='exa --group-directories-first --long --tree'
+alias ls='ls --group-directories-first'
+alias la='ls --group-directories-first --all'
+alias ll='ls --group-directories-first -l'
 
 alias cp='cp --interactive --verbose'
 alias mv='mv --interactive --verbose'

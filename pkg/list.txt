@@ -11,7 +11,6 @@ diff-so-fancy | improved human-readable git diffs
 docker        | create and run application containers
 elixir        | elixir programming language
 entr          | run arbitrary commands when files change
-exa           | modern replacement for ls (colors, tree view, etc.)
 fzf           | fast command line fuzzy finder
 gdb           | GNU debugger for tracing through programs
 git           | the stupid content tracker (seriously! see the man page)
