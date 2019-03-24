@@ -7,13 +7,14 @@ set -x
 #  Symlink the dotfiles
 # ----------------------------------------------------------------------
 
-if [[ ! -d ~/dotfiles ]]; then
-	git clone https://github.com/nutty7t/raspberry ~/dotfiles
+if [[ ! -d ~/Code/dotfiles ]]; then
+	git clone https://github.com/nutty7t/dotfiles ~/Code/dotfiles
+	git -C ~/Code/dotfiles checkout raspberry
 else
-	git -C ~/dotfiles pull
+	git -C ~/Code/dotfiles pull
 fi
 
-find ~/dotfiles -name '*.symlink' \
+find ~/Code/dotfiles -name '*.symlink' \
 	| xargs \
 		--replace={} \
 		--max-args=1 \
