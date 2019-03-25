@@ -3,7 +3,7 @@
 set -e
 set -x
 
-plugins="~/.zsh_plugins"
+plugins=~/.zsh_plugins
 
 # ----------------------------------------------------------------------
 #  Clone plugin repositories
@@ -40,20 +40,20 @@ done
 #  Setup Spaceship ZSH prompt
 # ----------------------------------------------------------------------
 
-spaceship_zsh="${plugins}/spaceship-prompt/spaceship.zsh"
-site_functions="/usr/local/share/zsh/site-functions"
+spaceship_zsh=${plugins}/spaceship-prompt/spaceship.zsh
+site_functions=/usr/local/share/zsh/site-functions
 
 sudo mkdir --parents ${site_functions}
 sudo ln \
 	--force \
 	--symbolic \
-	"${spaceship_zsh}" \
-	"${site_functions}/prompt_spaceship_setup"
+	${spaceship_zsh} \
+	${site_functions}/prompt_spaceship_setup
 
 mkdir --parents ~/.zfunctions
 ln \
 	--force \
 	--symbolic \
-	"${spaceship_zsh}" \
-	"~/.zfunctions/prompt_spaceship_setup"
+	${spaceship_zsh} \
+	~/.zfunctions/prompt_spaceship_setup
 

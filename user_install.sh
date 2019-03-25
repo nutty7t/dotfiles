@@ -36,7 +36,6 @@ find -name '_install.sh' | xargs --max-args=1 bash
 # ----------------------------------------------------------------------
 
 echo
-printf "All done! ^.^\n"
-printf "Don't forget to set nutty's password!\n"
+echo "All done! ^.^"
 echo
 
