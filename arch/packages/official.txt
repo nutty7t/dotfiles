@@ -3,7 +3,6 @@
 
 base-devel    | tools for building (compiling and linking)
 bat           | cat clone with syntax highlighting and git integration
-clingo        | grounder and solver for logic programs
 clojure       | clojure programming language
 ctags         | indexes identifiers in source code for easy locating
 diff-so-fancy | improved human-readable git diffs
