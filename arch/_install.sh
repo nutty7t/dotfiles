@@ -72,7 +72,7 @@ pacman \
 	--needed \
 	--noconfirm \
 	--sync \
-	- <$(dirname $0)/packages/official.txt
+	$(cat $(dirname $0)/packages/official.txt | tr '\n' ' ')
 
 # Install AUR packages
 su \
