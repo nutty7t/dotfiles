@@ -21,15 +21,14 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " Auto-Completion {
 	Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
-	Plug 'zchee/deoplete-go', { 'do': 'make'} " golang
-	Plug 'slashmili/alchemist.vim'            " elixir
-	Plug 'zchee/deoplete-jedi'                " python
+	Plug 'zchee/deoplete-go', {'do': 'make'} " golang
+	Plug 'slashmili/alchemist.vim'           " elixir
+	Plug 'zchee/deoplete-jedi'               " python
 " }
 
 " Whitespace Management {
 	Plug 'editorconfig/editorconfig-vim'  " style settings
 	Plug 'ntpeters/vim-better-whitespace' " trailing whitespace
-	Plug 'Yggdroot/indentLine'            " display indentation levels
 " }
 
 " Utility {
