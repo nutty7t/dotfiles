@@ -20,6 +20,7 @@ httpie        | curl, but for humans (syntax highlighting, JSON support)
 ipython       | interactive python command shell
 jdk-openjdk   | java development kit
 jq            | lightweight and flexible command-line JSON processor
+kubectl       | kubernetes command line tool
 man           | read the fucking manual
 neofetch      | command-line system information tool
 neovim        | vim-fork focused on extensibility and usability
