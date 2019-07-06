@@ -37,5 +37,5 @@ RUN fselect path from ~/Code/dotfiles \
 	where name = '_install.sh' and \
 	path != '*arch*' | xargs --max-args=1 bash
 
-CMD ["tmux"]
+CMD ["sleep", "infinity"]
 
