@@ -1,10 +1,17 @@
 alias reload!='clear && source ~/.zshrc'
 
-alias ls='exa --group-directories-first'
-alias la='exa --group-directories-first --all'
-alias ll='exa --group-directories-first --long'
-alias lst='exa --group-directories-first --tree'
-alias llt='exa --group-directories-first --long --tree'
+# Commented out until the following issue gets resolved:
+# https://github.com/ogham/exa/issues/517
+# alias ls='exa --group-directories-first'
+# alias la='exa --group-directories-first --all'
+# alias ll='exa --group-directories-first --long'
+# alias lst='exa --group-directories-first --tree'
+# alias llt='exa --group-directories-first --long --tree'
+
+# Until then, just use coreutils ls.
+alias ls='ls --color=auto'
+alias la='ls --group-directories-first --all'
+alias ll='ls --group-directories-first -l'
 
 alias cp='cp --interactive --verbose'
 alias mv='mv --interactive --verbose'
