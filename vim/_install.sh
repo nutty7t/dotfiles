@@ -6,7 +6,7 @@ set -x
 # Create some symbolic links, creating needless indirection, just
 # because I prefer .vimrc over init.vim.
 mkdir --parents ~/.config/nvim \
-	&& ln --force --symbolic ~/Code/dotfiles/vim ~/.vimrc \
+	&& ln --force --symbolic ~/.dotfiles/vim ~/.vimrc \
 	&& ln --force --symbolic ~/.vimrc/main.vim ~/.config/nvim/init.vim
 
 # Install vim-plug.
