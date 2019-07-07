@@ -15,13 +15,13 @@ RUN tmp/_install.sh \
 USER nutty
 WORKDIR /home/nutty
 
-RUN mkdir ~/Code && git clone \
+RUN git clone \
 	https://github.com/nutty7t/dotfiles \
-	~/Code/dotfiles
+	~/.dotfiles
 
 # Symlink all *.symlink files to ~
 # E.g. ./foo/bar.symlink -> ~/.bar
-RUN fselect path from ~/Code/dotfiles \
+RUN fselect path from ~/.dotfiles \
 	where name = '*.symlink' | xargs \
 		--replace={} \
 		--max-args=1 \
@@ -33,7 +33,7 @@ RUN fselect path from ~/Code/dotfiles \
 			~/.$(basename {} .symlink)'
 
 # Run all installation scripts
-RUN fselect path from ~/Code/dotfiles \
+RUN fselect path from ~/.dotfiles \
 	where name = '_install.sh' and \
 	path != '*arch*' | xargs --max-args=1 bash
 

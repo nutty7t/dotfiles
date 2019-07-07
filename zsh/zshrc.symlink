@@ -9,7 +9,7 @@
 #       5. topic/aliases.zsh
 # ─────────────────────────────────────────────────────────────────────
 
-export DOTFILES=${HOME}/Code/dotfiles
+export DOTFILES=${HOME}/.dotfiles
 
 # Get a list of all of the `.zsh` files in the repo.
 typeset -U config_files
