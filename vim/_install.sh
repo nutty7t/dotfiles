@@ -17,10 +17,6 @@ curl \
 	--output ~/.local/share/nvim/site/autoload/plug.vim \
 	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-# Allow support for Python plugins in nvim.
-# Required for deoplete.
-pip3 install --user pynvim
-
 # Install vim plugins. nvim won't exit with a non-zero exit code if
 # +PlugInstall fails so the output of +PlugStatus needs to be parsed in
 # order to determine whether the installation succeeded or not.
@@ -45,4 +41,22 @@ nvim +PlugInstall +qall \
 		| egrep --only-matching '[0-9+]' \
 	)) \
 	&& rm PlugStatus
+
+# Symlink Coc.nvim settings file.
+ln \
+	--force \
+	--symbolic \
+	~/.dotfiles/vim/completion.json \
+	~/.config/nvim/coc-settings.json
+
+# Install Coc.nvim extensions.
+mkdir --parents ~/.config/coc/extensions
+pushd ~/.config/coc/extensions
+if [ ! -f package.json ]; then
+	echo '{"dependencies":{}}' >package.json
+fi
+npm install \
+	coc-json \
+	coc-python
+popd
 
