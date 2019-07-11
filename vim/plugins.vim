@@ -20,10 +20,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 " }
 
 " Auto-Completion {
-	Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
-	Plug 'zchee/deoplete-go', {'do': 'make'} " golang
-	Plug 'slashmili/alchemist.vim'           " elixir
-	Plug 'zchee/deoplete-jedi'               " python
+	Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 " }
 
 " Whitespace Management {
