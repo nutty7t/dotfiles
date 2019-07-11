@@ -60,13 +60,26 @@
 " }
 
 " Mappings {
-	let mapleader=" "
+	" escape from the home row
 	inoremap fd <ESC>
 	vnoremap fd <ESC>
-	cnoremap w!! w !sudo tee % >/dev/null " sudo write file
-	nnoremap <LEADER>tl :set wrap! <CR>   " toggle line wrapping
-	nnoremap <LEADER>tw :set list! <CR>   " toggle whitespace
-	nnoremap <LEADER>tp :set invpaste<CR> " toggle paste mode
-	nnoremap // :noh <CR>                 " clear search highlighting
+
+	" leader key
+	let mapleader=" "
+
+	" sudo write file
+	cnoremap w!! w !sudo tee % >/dev/null
+
+	" toggle line wrapping
+	nnoremap <LEADER>tl :set wrap! <CR>
+
+	" toggle whitespace
+	nnoremap <LEADER>tw :set list! <CR>
+
+	" toggle paste mode
+	nnoremap <LEADER>tp :set invpaste<CR>
+
+	" clear search highlighting
+	nnoremap // :noh <CR>
 " }
 
