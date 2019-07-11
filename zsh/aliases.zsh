@@ -1,4 +1,5 @@
 alias reload!='clear && source ~/.zshrc'
+alias dotfiles='cd ~/.dotfiles'
 
 # Commented out until the following issue gets resolved:
 # https://github.com/ogham/exa/issues/517
