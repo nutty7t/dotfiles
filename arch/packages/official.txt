@@ -26,11 +26,12 @@ neofetch      | command-line system information tool
 neovim        | vim-fork focused on extensibility and usability
 nodejs        | javascript runtime built on Chrome's V8 engine
 npm           | javascript package manager
+openldap      | lightweight directory access protocol
 p7zip         | file archiver with high compression ratio
 pandoc        | universal document converter
 php           | php programming language
-python        | python programming language (v3.x)
 python2       | python programming language (v2.x)
+python        | python programming language (v3.x)
 racket        | racket (formerly PLT Scheme) programming language
 ranger        | file manager with vi key bindings
 ripgrep       | recursively searches current directory for a regex pattern
