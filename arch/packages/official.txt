@@ -37,6 +37,7 @@ ranger        | file manager with vi key bindings
 ripgrep       | recursively searches current directory for a regex pattern
 ruby          | ruby programming language
 rust          | rust programming language
+shellcheck    | shell script analysis tool
 sqlite        | serverless relational database
 swi-prolog    | prolog programming language
 tig           | text-mode interface for git repositories
