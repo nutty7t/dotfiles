@@ -1,9 +1,10 @@
 # Arch User Repository (AUR) Packages
 # https://aur.archlinux.org/packages/
 
-clingo          | grounder and solver for logic programs
-doctl           | digital ocean command line tool
-fselect         | find files with SQL-like queries
-leiningen       | clojure build automation and dependency management
-python-pipenv   | python package manager
+clingo        | grounder and solver for logic programs
+doctl         | digital ocean command line tool
+fselect       | find files with SQL-like queries
+leiningen     | clojure build automation and dependency management
+python-pipenv | python package manager
+yq-bin        | a portable command-line YAML processor
 
