@@ -57,6 +57,7 @@ if [ ! -f package.json ]; then
 fi
 npm install \
 	coc-json \
-	coc-python
+	coc-python \
+	coc-yaml
 popd
 
