@@ -23,7 +23,6 @@ jq            | lightweight and flexible command-line JSON processor
 kubectl       | kubernetes command line tool
 man           | read the fucking manual
 neofetch      | command-line system information tool
-neovim        | vim-fork focused on extensibility and usability
 nodejs        | javascript runtime built on Chrome's V8 engine
 npm           | javascript package manager
 openldap      | lightweight directory access protocol
