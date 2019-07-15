@@ -71,15 +71,15 @@
 	cnoremap w!! w !sudo tee % >/dev/null
 
 	" toggle line wrapping
-	nnoremap <LEADER>tl :set wrap! <CR>
+	nnoremap <LEADER>tl :set wrap!<CR>
 
 	" toggle whitespace
-	nnoremap <LEADER>tw :set list! <CR>
+	nnoremap <LEADER>tw :set list!<CR>
 
 	" toggle paste mode
 	nnoremap <LEADER>tp :set invpaste<CR>
 
 	" clear search highlighting
-	nnoremap // :noh <CR>
+	nnoremap // :noh<CR>
 " }
 
