@@ -16,3 +16,6 @@ sudo npm install -g bash-language-server
 # Dockerfile language server.
 sudo npm install -g dockerfile-language-server-nodejs
 
+# Vue language server.
+sudo npm install -g vue-language-server
+

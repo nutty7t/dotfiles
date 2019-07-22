@@ -58,6 +58,8 @@ fi
 npm install \
 	coc-json \
 	coc-python \
+	coc-tsserver \
+	coc-vetur \
 	coc-yaml
 popd
 
