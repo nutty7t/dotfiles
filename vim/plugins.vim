@@ -21,6 +21,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " Auto-Completion {
 	Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+	Plug 'posva/vim-vue'
 " }
 
 " Whitespace Management {
