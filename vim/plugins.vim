@@ -19,9 +19,11 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'jistr/vim-nerdtree-tabs' " tab integration
 " }
 
-" Auto-Completion {
+" Auto-Completion / Syntax Highlighting {
 	Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-	Plug 'posva/vim-vue'
+	Plug 'cakebaker/scss-syntax.vim' " scss (sassy css)
+	Plug 'digitaltoad/vim-pug'       " pug templating engine
+	Plug 'posva/vim-vue'             " vue single-file components
 " }
 
 " Whitespace Management {
