@@ -35,8 +35,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'mbbill/undotree'         " undo tree visualizer
 	Plug 'junegunn/vim-easy-align' " easy alignment
 	Plug 'justinmk/vim-sneak'      " sneak motion
+	Plug 'tomtom/tcomment_vim'     " comment stuff out
 	Plug 'tpope/vim-surround'      " surrounding pairs
-	Plug 'tpope/vim-commentary'    " comment stuff out
 	Plug 'tpope/vim-endwise'       " auto-closing structures
 	Plug 'tpope/vim-repeat'        " repeating plugin maps
 " }
