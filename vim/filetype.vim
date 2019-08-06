@@ -6,3 +6,6 @@ filetype indent on
 autocmd FileType vue syntax sync fromstart
 let g:vue_disable_pre_processors = 1
 
+" YAML
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
