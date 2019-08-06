@@ -47,3 +47,16 @@ wget          | retrieve files via HTTP(S) and FTP
 yarn          | another JavaScript package manager
 zsh           | unix shell built on top of bash with additional features
 
+# QMK Build Tools
+# https://github.com/nutty7t/keyboard
+
+arm-none-eabi-binutils
+arm-none-eabi-gcc
+arm-none-eabi-newlib
+avr-binutils
+avr-gcc
+avr-libc
+dfu-programmer
+dfu-util
+unzip
+zip
