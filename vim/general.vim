@@ -6,8 +6,8 @@
 	set autoread     " automatically reload files
 
 	if has('persistent_undo')
-		silent call mkdir(expand('~') . '/.vim/backups', 'p')
-		set undodir=~/.vim/backups
+		silent call mkdir(expand('~') . '/Code/undodir', 'p')
+		set undodir=~/Code/undodir
 		set undofile
 	endif
 
