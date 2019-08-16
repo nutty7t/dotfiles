@@ -15,9 +15,11 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
+alias fzf='rg --files-with-matches | fzf'
+alias vimfzf='vim $(fzf)'
+
 alias cat='bat'
 alias vim='nvim'
-alias vimfzf='vim $(fzf)'
 alias neofetch='echo && neofetch'
 
 # ═══════════ [WARNING] ═══════════ #
