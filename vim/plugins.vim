@@ -31,6 +31,10 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'ntpeters/vim-better-whitespace' " trailing whitespace
 " }
 
+" Markdown Preview {
+	Plug 'iamcco/markdown-preview.nvim', {'do': 'cd app & yarn install'}
+" }
+
 " Utility {
 	Plug 'mbbill/undotree'         " undo tree visualizer
 	Plug 'junegunn/vim-easy-align' " easy alignment
