@@ -19,3 +19,14 @@ sudo npm install -g dockerfile-language-server-nodejs
 # Vue language server.
 sudo npm install -g vue-language-server
 
+# PureScript.
+# https://github.com/commercialhaskell/stack/issues/1012
+# https://github.com/purescript/documentation/issues/119
+#
+# TODO: For some reason, spago doesn't seem to work.
+# It works fine when I download the binary, but the command
+# is a noop when I install from npm.
+sudo ln -s /usr/lib/libtinfo.so.6 /usr/lib/libtinfo.so.5
+sudo npm install -g purescript
+sudo npm install -g bower pulp
+
