@@ -77,7 +77,20 @@
           }
         }
       }
+    },
+    "purescript": {
+      "command": "purescript-language-server",
+      "args": ["--stdio"],
+      "filetypes": ["purescript"],
+      "rootPatterns": [
+        "bower.json",
+        "psc-package.json",
+        "spago.dhall"
+      ]
     }
   },
+  "purescript.addSpagoSources": true,
+  "purescript.addNpmPath": true,
+  "purescript.buildCommand": "spago build -- --json-errors",
   "python.linting.mypyEnabled": true
 }
