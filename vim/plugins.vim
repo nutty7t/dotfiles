@@ -21,9 +21,10 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " Auto-Completion / Syntax Highlighting {
 	Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-	Plug 'cakebaker/scss-syntax.vim' " scss (sassy css)
-	Plug 'digitaltoad/vim-pug'       " pug templating engine
-	Plug 'posva/vim-vue'             " vue single-file components
+	Plug 'cakebaker/scss-syntax.vim'         " scss (sassy css)
+	Plug 'digitaltoad/vim-pug'               " pug templating engine
+	Plug 'posva/vim-vue'                     " vue single-file components
+	Plug 'purescript-contrib/purescript-vim' " purescript
 " }
 
 " Whitespace Management {
