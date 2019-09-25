@@ -22,23 +22,3 @@ alias cat='bat'
 alias vim='nvim'
 alias neofetch='echo && neofetch'
 
-# ═══════════ [WARNING] ═══════════ #
-#                                   #
-#     These probably aren't very    #
-#  politically correct alias names  #
-#                                   #
-# ═══════════ [WARNING] ═══════════ #
-
-function __man {
-	man $* \
-		| col --no-backspaces \
-		| nvim -R -c 'set ft=man nomod nolist' -
-}
-
-function __woman {
-	tldr $1 | head --lines=-3
-}
-
-alias man='__woman'
-alias woman='__man'
-
