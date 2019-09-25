@@ -15,7 +15,7 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
-alias fzf='rg --files-with-matches | fzf'
+export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git/*"'
 alias vimfzf='vim $(fzf)'
 
 alias cat='bat'
