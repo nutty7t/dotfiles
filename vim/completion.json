@@ -24,6 +24,9 @@
         "python"
       ],
       "settings": {
+        "linting": {
+          "mypyEnabled": true
+        },
         "pyls": {
           "enable": true,
           "trace": {
@@ -86,11 +89,12 @@
         "bower.json",
         "psc-package.json",
         "spago.dhall"
-      ]
+      ],
+      "settings": {
+        "addSpagoSources": true,
+        "addNpmPath": true,
+        "buildCommand": "spago build -- --json-errors"
+      }
     }
-  },
-  "purescript.addSpagoSources": true,
-  "purescript.addNpmPath": true,
-  "purescript.buildCommand": "spago build -- --json-errors",
-  "python.linting.mypyEnabled": true
+  }
 }
