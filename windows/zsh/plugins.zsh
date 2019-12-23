@@ -9,4 +9,5 @@ if [[ -d ${plugins} ]]; then
 	source ${plugins}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 	source ${plugins}/oh-my-zsh/plugins/git/git.plugin.zsh
 	source ${plugins}/oh-my-zsh/plugins/vi-mode/vi-mode.plugin.zsh
+	source ${plugins}/zsh-nix-shell/nix-shell.plugin.zsh
 fi

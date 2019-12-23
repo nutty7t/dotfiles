@@ -14,6 +14,7 @@ repositories=(
 	'https://github.com/zsh-users/zsh-autosuggestions'
 	'https://github.com/zsh-users/zsh-syntax-highlighting'
 	'https://github.com/denysdovhan/spaceship-prompt'
+	'https://github.com/chisui/zsh-nix-shell'
 )
 
 if [[ ! -d ${plugins} ]]; then
