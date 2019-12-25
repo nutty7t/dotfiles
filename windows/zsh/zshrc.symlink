@@ -1,4 +1,4 @@
-# ─────────────────────────────────────────────────────────────────────
+# ----------------------------------------------------------------------
 #  All of the zsh files in this dotfiles repository will be loaded in
 #  the following order:
 #
@@ -7,7 +7,7 @@
 #    3. topic/completion.zsh
 #    4. topic/plugin.zsh
 #    5. topic/aliases.zsh
-# ─────────────────────────────────────────────────────────────────────
+# ----------------------------------------------------------------------
 
 export DOTFILES=${HOME}/.dotfiles/windows
 
