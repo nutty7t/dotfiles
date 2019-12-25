@@ -28,9 +28,6 @@ setopt cdable_vars
 # Enable menu-style autocompletion.
 zstyle ':completion:*' menu select
 
-# Shift+Tab to go backwards in menu.
-bindkey '^[[Z' reverse-menu-complete
-
 # If a completion is performed with the cursor within a word, and a full
 # completion is inserted, the cursor is moved to the end of the word.
 setopt always_to_end
