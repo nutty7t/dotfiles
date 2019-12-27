@@ -14,11 +14,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'junegunn/fzf.vim'
 " }
 
-" NERDTree {
-	Plug 'scrooloose/nerdtree'     " core plugin
-	Plug 'jistr/vim-nerdtree-tabs' " tab integration
-" }
-
 " Auto-Completion / Syntax Highlighting {
 	Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 	Plug 'cakebaker/scss-syntax.vim'         " scss (sassy css)
