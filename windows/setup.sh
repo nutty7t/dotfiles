@@ -5,7 +5,7 @@ symlink_command='ln --force --symbolic --verbose {} ~/.$(basename {} .symlink)'
 
 # Symlink all *.symlink files to ~
 # E.g. ./foo/bar.symlink -> ~/.bar
-fselect path from ~/.dotfiles where name = '*.symlink' \
+fselect path from ~/.dotfiles/windows where name = '*.symlink' \
 	| xargs \
 		--replace={} \
 		--max-args=1 \
