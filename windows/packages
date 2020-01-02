@@ -1,0 +1,16 @@
+bat
+coreutils
+curl
+exa
+fzf
+git
+gnugrep
+neofetch
+neovim
+nix
+nodejs
+ripgrep
+tig
+tmux
+wget
+zsh
