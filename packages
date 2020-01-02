@@ -1,4 +1,5 @@
 bat
+bash
 coreutils
 curl
 diff-so-fancy
