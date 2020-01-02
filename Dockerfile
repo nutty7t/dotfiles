@@ -12,8 +12,8 @@ RUN rm packages
 # setup dotfiles
 RUN apk add sudo
 RUN git clone https://github.com/nutty7t/dotfiles ~/.dotfiles \
-	&& mkdir ~/Code
-	&& ln --symbolic ~/.dotfiles ~/Code/dotfiles
+	&& mkdir ~/Code \
+	&& ln --symbolic ~/.dotfiles ~/Code/dotfiles \
 	&& cd ~/Code/dotfiles \
 	&& nix-shell --run "zsh ./setup.sh"
 
