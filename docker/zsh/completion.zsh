@@ -1,9 +1,0 @@
-# case-insensitive (uppercase from lowercase) completion
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-
-# case-insensitive (all) completion
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-
-# case-insensitive, partial-word and then substring completion
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-
