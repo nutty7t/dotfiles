@@ -53,6 +53,12 @@ ln \
 	~/.dotfiles/windows/vim/completion.json \
 	~/.config/nvim/coc-settings.json
 
+# Install language servers (assuming that node/_install.sh executed).
+npm install --global bash-language-server
+npm install --global dockerfile-language-server-nodejs
+npm install --global purescript-language-server
+npm install --global vue-language-server
+
 # Install Coc.nvim extensions.
 mkdir --parents ~/.config/coc/extensions
 pushd ~/.config/coc/extensions
