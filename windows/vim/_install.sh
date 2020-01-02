@@ -5,7 +5,7 @@ set -x
 
 # Create some symbolic links, creating needless indirection, just
 # because I prefer .vimrc over init.vim.
-rm ~/.vimrc
+rm --force --recursive ~/.vimrc
 mkdir --parents ~/.config/nvim \
 	&& ln --force --symbolic ~/.dotfiles/windows/vim ~/.vimrc \
 	&& ln --force --symbolic ~/.vimrc/main.vim ~/.config/nvim/init.vim
