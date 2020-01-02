@@ -1,10 +1,6 @@
 # ----------------------------------------------------------------------
-#  Spaceship Prompt.
+#  Prompt Settings.
 # ----------------------------------------------------------------------
-
-fpath=("${HOME}/.zfunctions" ${fpath})
-autoload -U promptinit; promptinit
-prompt spaceship
 
 SPACESHIP_CHAR_SYMBOL=":: "
 SPACESHIP_PROMPT_ORDER=(
@@ -68,3 +64,11 @@ spaceship_nix() {
 	fi
 	echo -n "%{%f%}"
 }
+
+# ----------------------------------------------------------------------
+#  Load Spaceship Prompt.
+# ----------------------------------------------------------------------
+
+fpath=("${HOME}/.zfunctions" ${fpath})
+autoload -U promptinit; promptinit
+prompt spaceship
