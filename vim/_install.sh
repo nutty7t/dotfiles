@@ -7,7 +7,7 @@ set -x
 # because I prefer .vimrc over init.vim.
 rm --force --recursive ~/.vimrc
 mkdir --parents ~/.config/nvim \
-	&& ln --force --symbolic ~/.dotfiles/windows/vim ~/.vimrc \
+	&& ln --force --symbolic ~/.dotfiles/vim ~/.vimrc \
 	&& ln --force --symbolic ~/.vimrc/main.vim ~/.config/nvim/init.vim
 
 # Install vim-plug.
@@ -50,7 +50,7 @@ nvim +PlugInstall +qall \
 ln \
 	--force \
 	--symbolic \
-	~/.dotfiles/windows/vim/completion.json \
+	~/.dotfiles/vim/completion.json \
 	~/.config/nvim/coc-settings.json
 
 # Install language servers (assuming that node/_install.sh executed).
