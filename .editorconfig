@@ -1,0 +1,13 @@
+root = true
+
+[Dockerfile]
+indent_style = tab
+indent_size = 2
+
+[*.{vim,sh,zsh,symlink}]
+indent_style = tab
+indent_size = 2
+
+[*.{json,nix}]
+indent_style = space
+indent_size = 2
