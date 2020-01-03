@@ -20,19 +20,20 @@ spaceship_nix() {
 	# Precondition: We are in a nix-shell.
 	[[ -z $IN_NIX_SHELL ]] && return
 
-	echo -n "%{%F{green}%}"
-	if grep -qE "(Microsoft|WSL)" /proc/version &>/dev/null; then
-		# HACK: For whatever reason, at least in the terminal
-		# emulators on Windows, it seems as if zsh uses the
-		# number of bytes in the UTF-8 representation of Unicode
-		# characters to determine their widths. This causes
-		# wonky formatting, so I'm using zsh escape sequences to
-		# manually specify the width of the characters.
+	# λ
+	echo -n "%{%B%F{green}%}"
+	if [[ $(unicodelen 'λ') == '1' ]]; then
+		echo "λ"
+	elif [[ $(unicodelen 'λ') == '2' ]]; then
+		# [HACK] For whatever reason, it seems that some terminals use the
+		# number of bytes in the UTF-8 representation of Unicode characters to
+		# determine their widths. This causes wonky formatting, so I'm using
+		# zsh escape sequences to manually specify the width of the characters.
 		echo -n "\xCE%{\xBB%} "
 	else
-		echo -n "λ "
+		echo -n "unicode rendering is borken "
 	fi
-	echo -n "%{%f%}"
+	echo -n "%{%b%f%}"
 
 	# Invoked using `nix-shell -p [packages]`
 	if [[ -n ${NIX_SHELL_PACKAGES} ]]; then
@@ -56,13 +57,9 @@ spaceship_nix() {
 	fi
 
 	# Print suffix.
-	echo -n "%{%F{green}%}"
-	if grep -qE "(Microsoft|WSL)" /proc/version &>/dev/null; then
-		echo -n "\xE2%{\x86\x92%} "
-	else
-		echo -n "→ "
-	fi
-	echo -n "%{%f%}"
+	echo -n "%{%B%F{green}%}"
+	echo -n "-> "
+	echo -n "%{%b%f%}"
 }
 
 # ----------------------------------------------------------------------
