@@ -4,11 +4,6 @@ RUN apk update
 RUN nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
 RUN nix-channel --update
 
-# install packages
-COPY packages .
-RUN nix-env --install $(cat packages)
-RUN rm packages
-
 # setup dotfiles
 RUN apk add sudo
 RUN git clone https://github.com/nutty7t/dotfiles ~/.dotfiles \
