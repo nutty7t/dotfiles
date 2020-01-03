@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Install Nix packages
+nix-env --install $(cat packages)
+
 # shellcheck disable=SC2016
 symlink_command='ln --force --symbolic --verbose {} ~/.$(basename {} .symlink)'
 
