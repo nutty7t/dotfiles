@@ -1,5 +1,5 @@
-bat
 bash
+bat
 coreutils
 curl
 diff-so-fancy
@@ -20,6 +20,7 @@ nix
 nodejs
 pandoc
 perl
+ps
 ripgrep
 tig
 tldr
