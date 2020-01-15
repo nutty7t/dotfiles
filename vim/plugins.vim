@@ -25,6 +25,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'digitaltoad/vim-pug'               " pug templating engine
 	Plug 'posva/vim-vue'                     " vue single-file components
 	Plug 'purescript-contrib/purescript-vim' " purescript
+	Plug 'mattn/emmet-vim'                   " emmet expansions
 " }
 
 " Whitespace Management {
