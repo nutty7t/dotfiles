@@ -67,6 +67,7 @@ if [ ! -f package.json ]; then
 fi
 npm install \
 	coc-json \
+	coc-prettier \
 	coc-python \
 	coc-tsserver \
 	coc-vetur \
