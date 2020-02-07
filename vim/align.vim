@@ -1,11 +1,8 @@
 " interactive visual mode
-xnoremap ga <Plug>(EasyAlign)
+xmap ga <Plug>(EasyAlign)
 
 " interactive motion
-nnoremap ga <Plug>(EasyAlign)
-
-" regular expression
-vnoremap gar :EasyAlign <CR><C-x>
+nmap ga <Plug>(EasyAlign)
 
 " Allow quotes to be aligned.
 let g:easy_align_delimiters = {
