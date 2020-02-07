@@ -7,4 +7,4 @@ set foldcolumn=1 " gutter left margin
 highlight LineNr ctermfg=grey
 highlight FoldColumn ctermbg=none
 highlight CursorLine cterm=none term=none
-highlight CursorLine guibg=#303000 ctermbg=234
+highlight CursorLine ctermbg=16
