@@ -19,13 +19,13 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'jistr/vim-nerdtree-tabs' " tab integration
 " }
 
-" Auto-Completion / Syntax Highlighting {
 	Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+	Plug 'MaxMEllon/vim-jsx-pretty'          " jsx / tsx
 	Plug 'cakebaker/scss-syntax.vim'         " scss (sassy css)
 	Plug 'digitaltoad/vim-pug'               " pug templating engine
+	Plug 'mattn/emmet-vim'                   " emmet expansions
 	Plug 'posva/vim-vue'                     " vue single-file components
 	Plug 'purescript-contrib/purescript-vim' " purescript
-	Plug 'mattn/emmet-vim'                   " emmet expansions
 " }
 
 " Whitespace Management {
