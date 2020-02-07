@@ -22,3 +22,7 @@ alias vimfzf='vim $(fzf)'
 alias cat='bat'
 alias vim='nvim'
 alias neofetch='echo && neofetch'
+
+# Let tmux know that the terminal supports 256 colors.
+# Run with Unicode support.
+alias tmux='TERM=xterm-256color tmux -u'
