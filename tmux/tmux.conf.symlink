@@ -19,7 +19,7 @@ set-option -g status-justify centre
 setw -g automatic-rename on
 
 # I like the color blue.
-set -g status-bg blue
+set -g status-bg colour17
 
 # Maximum length of left component.
 set -g status-left-length 20
@@ -33,22 +33,22 @@ set-window-option -g window-status-format \
 #	              └─ Window Name
 
 set-window-option -g window-status-current-format \
-	'#[bg=white,fg=blue,bold] #W '
+	'#[bg=white,fg=colour17,bold] #W '
 #	                          └─ Window Name
 
 set -g status-right \
-	'#[bg=blue,fg=white,bold] %Y-%m-%d <> %I:%M %p '
-#	                          │  │  │     │  │  └─ AM/PM
-#	                          │  │  │     │  │
-#	                          │  │  │     │  └─ Minute
-#	                          │  │  │     │
-#	                          │  │  │     └─ Hour (12-hours)
-#	                          │  │  │
-#	                          │  │  └─ Day
-#	                          │  │
-#	                          │  └─ Month
-#	                          │
-#	                          └─ Year
+	'#[bg=colour17,fg=white,bold] %Y-%m-%d <> %I:%M %p '
+#	                               │  │  │     │  │  └─ AM/PM
+#	                               │  │  │     │  │
+#	                               │  │  │     │  └─ Minute
+#	                               │  │  │     │
+#	                               │  │  │     └─ Hour (12-hours)
+#	                               │  │  │
+#	                               │  │  └─ Day
+#	                               │  │
+#	                               │  └─ Month
+#	                               │
+#	                               └─ Year
 
 # ----------------------------------------------------------------------
 #  General Settings
@@ -81,6 +81,11 @@ bind -n C-h select-pane -L
 bind -n C-j select-pane -D
 bind -n C-k select-pane -U
 bind -n C-l select-pane -R
+
+bind H resize-pane -L 10
+bind J resize-pane -D 10
+bind K resize-pane -U 10
+bind L resize-pane -R 10
 
 # `Ctrl+[` to enter access the scrollback buffer in vi-mode.
 # `v` to enter visual mode.
