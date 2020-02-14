@@ -6,7 +6,8 @@
       "css",
       "javascript",
       "typescript",
-      "vue"
+      "vue",
+      "rust"
     ]
   },
   "prettier": {
