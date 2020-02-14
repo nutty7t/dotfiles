@@ -4,6 +4,7 @@ source ~/.vimrc/filetype.vim
 source ~/.vimrc/plugins.vim
 source ~/.vimrc/align.vim
 source ~/.vimrc/completion.vim
+source ~/.vimrc/emmet.vim
 source ~/.vimrc/fuzzy.vim
 source ~/.vimrc/markdown.vim
 source ~/.vimrc/nerdtree.vim
