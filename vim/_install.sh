@@ -73,6 +73,8 @@ npm install \
 	coc-json \
 	coc-prettier \
 	coc-python \
+	coc-rls \
+	coc-rust-analyzer \
 	coc-tsserver \
 	coc-vetur \
 	coc-yaml
