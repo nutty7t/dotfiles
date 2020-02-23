@@ -14,3 +14,4 @@ fi
 # Install TPM plugins
 export TMUX_PLUGIN_MANAGER_PATH=~/.tmux/plugins/
 sh ~/.tmux/plugins/tpm/scripts/install_plugins.sh
+echo "do we get here?"
