@@ -59,9 +59,9 @@ npm install --global dockerfile-language-server-nodejs
 npm install --global purescript-language-server
 npm install --global vue-language-server
 
-nix-env -iA cachix -f https://cachix.org/api/v1/install
-cachix use herculus-ci
-nix-env -iA ghcide-ghc865 -f https://github.com/hercules-ci/ghcide-nix/tarball/master
+# nix-env -iA cachix -f https://cachix.org/api/v1/install
+# cachix use herculus-ci
+# nix-env -iA ghcide-ghc865 -f https://github.com/hercules-ci/ghcide-nix/tarball/master
 
 # Install Coc.nvim extensions.
 mkdir --parents ~/.config/coc/extensions

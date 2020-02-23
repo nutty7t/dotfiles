@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+set -e
+set -x
+
 # shellcheck disable=SC2016
 symlink_command='ln --force --symbolic --verbose {} ~/.$(basename {} .symlink)'
 
