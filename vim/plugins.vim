@@ -28,6 +28,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'pangloss/vim-javascript'           " javascript
 	Plug 'posva/vim-vue'                     " vue single-file components
 	Plug 'purescript-contrib/purescript-vim' " purescript
+	Plug 'towolf/vim-helm'                   " helm templates
 " }
 
 " Whitespace Management {
