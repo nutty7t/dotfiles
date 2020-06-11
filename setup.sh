@@ -15,13 +15,6 @@ fselect path from ~/.dotfiles where name = '*.symlink' \
 		bash -c "${symlink_command}"
 
 # Run all installation scripts
-#
-# [TODO] Some installation scripts depend on other installation scripts.
-# E.g. vim/_install.sh depends on node/_install.sh.
-#
-# Coincidentally, lexicographically sorting the results from fselect yields a
-# valid topological sorting of this implicit dependency graph. We'll want to
-# eventually make this graph explicit, and resolve the dependencies properly.
-fselect path from ~/.dotfiles where name = '_install.sh' \
+fselect path from ~/.dotfiles where name = 'install.sh' \
 	| sort \
 	| xargs --max-args=1 bash
