@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-# Taken from the Powerlevel10k ZSH theme.
+# Taken from the Powerlevel10k ZSH theme
 function prompt-length () {
 	emulate -L zsh
 	local COLUMNS=${2:-$COLUMNS}
