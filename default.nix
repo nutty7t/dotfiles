@@ -27,7 +27,6 @@ let
       # Cloud Tools
       pkgs.docker
       pkgs.kubectl
-      pkgs.kubernetes-helm
 
       # Git
       pkgs.gitAndTools.gitFull
