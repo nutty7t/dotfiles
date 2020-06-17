@@ -1,8 +1,10 @@
-{ symlinkJoin, makeWrapper, neovim, vimPlugins }:
+{ symlinkJoin, makeWrapper, neovim, nodejs-14_x, vimPlugins }:
   let
     # Plugins that are automatically loaded when neovim launches
     autoloadedPlugins = with vimPlugins;
       [
+        coc-nvim
+        coc-pairs
         easy-align
         editorconfig-vim
         fzf-vim
@@ -14,12 +16,27 @@
       ];
 
     # Plugins that are manually loaded by calling `:packadd <plugin>`
-    manualPlugins = with vimPlugins; [];
+    manualPlugins = with vimPlugins;
+      [
+        coc-css
+        coc-emmet
+        coc-eslint
+        coc-html
+        coc-jest
+        coc-json
+        coc-prettier
+        coc-tslint
+        coc-tslint-plugin
+        coc-tsserver
+        coc-yaml
+      ];
 
     nuttyVim = neovim.override {
       configure = {
         customRC = ''
           source ${./config/align.vim}
+          source ${./config/completion.vim}
+          source ${./config/filetype.vim}
           source ${./config/fuzzy.vim}
           source ${./config/general.vim}
           source ${./config/gui.vim}
@@ -35,6 +52,7 @@
 
       vimAlias = true;
       viAlias = true;
+      withNodeJs = true;
     };
 
   in
