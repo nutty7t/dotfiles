@@ -13,6 +13,9 @@ autocmd FileType typescript,typescriptreact :packadd coc-tslint
 autocmd FileType typescript,typescriptreact :packadd coc-tslint-plugin
 autocmd FileType typescript,typescriptreact :packadd coc-tslint-tsserver
 
+autocmd FileType purescript :packadd purescript-vim
+autocmd BufNewFile,BufRead *.purs set filetype=purescript
+
 autocmd FileType json :packadd coc-json
 
 autocmd FileType yaml :packadd coc-yaml
