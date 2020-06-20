@@ -47,7 +47,9 @@
         coc-tslint-plugin
         coc-tsserver
         coc-yaml
+        emmet-vim
         purescript-vim
+        vim-jsx-pretty
       ];
 
     node2nixPackages = import ./packages {};
@@ -66,6 +68,7 @@
           source ${./config/general.vim}
           source ${./config/align.vim}
           source ${./config/completion.vim}
+          source ${./config/emmet.vim}
           source ${./config/filetype.vim}
           source ${./config/fuzzy.vim}
           source ${./config/gui.vim}
