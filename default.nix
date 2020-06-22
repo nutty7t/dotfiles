@@ -1,13 +1,18 @@
 let
   pkgs = import <nixpkgs> {};
 
-  cpkgs = {
+  cpkgs = rec {
+    dotfiles = pkgs.callPackage ./dotfiles.nix {};
     tmux = pkgs.callPackage ./tmux {};
     vim = pkgs.callPackage ./vim {};
+    zsh = pkgs.callPackage ./zsh { dotfiles = dotfiles; };
   };
 
   packagesToInstall =
     [
+      # ⚫
+      cpkgs.dotfiles
+
       # Utilities
       pkgs.bat
       pkgs.coreutils
@@ -40,9 +45,9 @@ let
       pkgs.kakoune
 
       # Shells
+      cpkgs.zsh
       pkgs.bash
       pkgs.fish
-      pkgs.zsh
 
       # Zsh Plugins
       pkgs.nix-zsh-completions

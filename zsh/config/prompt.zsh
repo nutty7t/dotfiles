@@ -14,10 +14,10 @@ SPACESHIP_PROMPT_ORDER=(
 # ----------------------------------------------------------------------
 
 spaceship_nix() {
-	# Precondition: The `nix` section is enabled.
+	# Precondition: The `nix` section is enabled
 	[[ $SPACESHIP_NIX_SHELL_SHOW == false ]] && return
 
-	# Precondition: We are in a nix-shell.
+	# Precondition: We are in a nix-shell
 	[[ -z $IN_NIX_SHELL ]] && return
 
 	# λ
@@ -49,14 +49,14 @@ spaceship_nix() {
 		done
 		echo -n "] "
 
-	# Otherwise, invoked using nix expression file.
+	# Otherwise, invoked using nix expression file
 	else
 		local cleanName=${name#interactive-}
 		cleanName=${cleanName%-environment}
 		echo -n "${cleanName} "
 	fi
 
-	# Print suffix.
+	# Print suffix
 	echo -n "%{%B%F{green}%}"
 	echo -n "-> "
 	echo -n "%{%b%f%}"
@@ -66,6 +66,4 @@ spaceship_nix() {
 #  Load Spaceship Prompt
 # ----------------------------------------------------------------------
 
-fpath=("${HOME}/.zfunctions" ${fpath})
-autoload -U promptinit; promptinit
-prompt spaceship
+source "${HOME}/.nix-profile/share/zsh/themes/spaceship.zsh-theme"

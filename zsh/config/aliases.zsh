@@ -1,5 +1,5 @@
-alias reload!='clear && source ~/.zshrc'
-alias dotfiles='cd ~/.dotfiles'
+alias reload!='clear && source ~/.nix-profile/share/dotfiles/.zshrc'
+alias dotfiles='cd ~/Code/dotfiles'
 alias explorer='explorer.exe .'
 
 alias ls='exa --group-directories-first'
