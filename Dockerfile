@@ -9,7 +9,6 @@ WORKDIR /root/.dotfiles
 RUN nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
 RUN nix-channel --update
 RUN nix-env --install --file default.nix
-RUN nix-shell --run "bash setup.sh"
 
 WORKDIR /root
 
