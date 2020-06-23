@@ -1,10 +1,10 @@
 [user]
 	name = ナッティ
 	email = hello@nutty.cc
-	signingkey = ABCD1234
+	signingkey = test
 
 [core]
-	editor = nvim
+	editor = nvim -i NONE
 
 [commit]
 	gpgsign = false
@@ -15,4 +15,3 @@
 [pager]
 	diff = diff-so-fancy | less --tabs=1,5 -RFX
 	show = diff-so-fancy | less --tabs=1,5 -RFX
-

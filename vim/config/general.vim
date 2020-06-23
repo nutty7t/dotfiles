@@ -5,7 +5,7 @@
 	set autowriteall " automatically save all files
 	set autoread     " automatically reload files
 
-	if has('persistent_undo')
+	if has('persistent_undo') && $HOME == '/home/nutty'
 		silent call mkdir(expand('~') . '/Code/undodir', 'p')
 		set undodir=~/Code/undodir
 		set undofile

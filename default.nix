@@ -3,6 +3,7 @@ let
 
   cpkgs = rec {
     dotfiles = pkgs.callPackage ./dotfiles.nix {};
+    git = pkgs.callPackage ./git { dotfiles = dotfiles; };
     tmux = pkgs.callPackage ./tmux {};
     vim = pkgs.callPackage ./vim {};
     zsh = pkgs.callPackage ./zsh { dotfiles = dotfiles; };
@@ -21,6 +22,7 @@ let
       pkgs.fselect
       pkgs.fzf
       pkgs.gnugrep
+      pkgs.gnupg
       pkgs.gnused
       pkgs.httpie
       pkgs.less
@@ -35,7 +37,7 @@ let
       pkgs.kubectl
 
       # Git
-      pkgs.gitAndTools.gitFull
+      cpkgs.git
       pkgs.gitAndTools.diff-so-fancy
       pkgs.gitAndTools.tig
 
