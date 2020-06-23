@@ -1,7 +1,7 @@
 [user]
 	name = ナッティ
 	email = hello@nutty.cc
-	signingkey = test
+	signingkey = 2A23A66A
 
 [core]
 	editor = nvim -i NONE
