@@ -41,6 +41,13 @@ echo $(which zsh) | sudo tee -a /etc/shells
 chsh -s $(which zsh)
 ```
 
+5. Become evil? Join the dark side. 🖤
+
+``` bash
+git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
+~/.emacs.d/bin/doom install
+```
+
 ## Docker
 
 > My dotfiles can be built as a Docker container, which means that you can try
