@@ -4,10 +4,11 @@
 
 ## Windows
 
-> Wow! Windows Subsystem for Linux (WSL) is actually good! Finally, I can get
-> the best of both worlds now: a *nix environment (I mean, there was Cygwin,
-> but that's an uncanny valley) *and* the ability to run PC games and Adobe
-> Creative Cloud programs.
+> Windows Subsystem for Linux (WSL) makes the development experience on this
+> operating system something worth ditching macOS for! I get the best of both
+> worlds now: a *nix environment (I mean, there was Cygwin, but that's an
+> uncanny valley) *and* the ability to run PC games and Adobe Creative Cloud
+> programs.
 
 1. Install [Windows Subsystem for Linux] (Debian).
 
@@ -24,17 +25,16 @@ echo "sandbox = false"        | sudo tee    /etc/nix/nix.conf
 echo "use-sqlite-wal = false" | sudo tee -a /etc/nix/nix.conf
 
 curl https://nixos.org/nix/install | sh
-
 ```
+
 3. Install dotfiles.
 
 ``` bash
-git clone https://github.com/nutty7t/dotfiles ~/.dotfiles
-cd ~/.dotfiles
-nix-shell --run "zsh ./setup.sh"
+git clone https://github.com/nutty7t/dotfiles
+nix-env --install --file dotfiles/default.nix
 ```
 
-4. Setup Z-Shell.
+4. Set `zsh` as the default shell.
 
 ``` bash
 echo $(which zsh) | sudo tee -a /etc/shells
@@ -45,33 +45,17 @@ chsh -s $(which zsh)
 
 > My dotfiles can be built as a Docker container, which means that you can try
 > them out in a sandboxed environment without messing up your own system. It
-> also means that it's easy to deploy my development environment [in the cloud]
-> so that it's accessible anywhere I go!
-
-1. Clone the repository.
+> also means that it's easy to deploy my development environment [in the cloud].
 
 ``` bash
-git clone https://github.com/nutty7t/dotfiles
-cd dotfiles
-```
-
-2. Build the image.
-
-``` bash
-nix-shell # optional
-docker build --no-cache --tag nutty7t/dotfiles .
-```
-
-Alternatively, the image can be pulled from [Docker Hub] -- but who knows
-if it's up-to-date.
-
-``` bash
+# Download the image
 docker pull nutty7t/dotfiles:latest
-```
 
-3. Run the container.
+# OR build the image
+git clone https://github.com/nutty7t/dotfiles && cd dotfiles
+docker build --no-cache --tag nutty7t/dotfiles .
 
-``` bash
+# AND start the container
 docker run --hostname nuttydots -it nutty7t/dotfiles zsh
 ```
 
