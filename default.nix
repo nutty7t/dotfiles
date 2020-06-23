@@ -27,6 +27,7 @@ let
       pkgs.man-db
       pkgs.man-pages
       pkgs.openssh
+      pkgs.ps
       pkgs.ripgrep
 
       # Cloud Tools
