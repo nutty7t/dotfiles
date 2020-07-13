@@ -24,21 +24,27 @@ sudo mkdir -p /etc/nix
 echo "sandbox = false"        | sudo tee    /etc/nix/nix.conf
 echo "use-sqlite-wal = false" | sudo tee -a /etc/nix/nix.conf
 
-curl https://nixos.org/nix/install | sh
+curl -L https://nixos.org/nix/install | sh
+. ~/.nix-profile/etc/profile.d/nix.sh
+
+# Home Manager
+nix-channel --add https://github.com/rycee/home-manager/archive/master.tar.gz home-manager
+nix-channel --update
 ```
 
 3. Install dotfiles.
 
 ``` bash
-git clone https://github.com/nutty7t/dotfiles
-nix-env --install --file dotfiles/default.nix
+nix-shell -p git --run "git clone https://github.com/nutty7t/dotfiles" ~/Code/dotfiles
+ln --symbolic --force ~/Code/dotfiles/dotfiles.nix ~/.config/nixpkgs/home.nix
+home-manager switch
 ```
 
-4. Set `zsh` as the default shell.
+4. Set `fish` as the default shell.
 
 ``` bash
-echo $(which zsh) | sudo tee -a /etc/shells
-chsh -s $(which zsh)
+echo $(which fish) | sudo tee -a /etc/shells
+chsh -s $(which fish)
 ```
 
 5. Become evil? Join the dark side. 🖤
@@ -63,7 +69,7 @@ git clone https://github.com/nutty7t/dotfiles && cd dotfiles
 docker build --no-cache --tag nutty7t/dotfiles .
 
 # AND start the container
-docker run --hostname nuttydots -it nutty7t/dotfiles zsh
+docker run --hostname nuttydots -it nutty7t/dotfiles fish
 ```
 
 ## Troubleshooting

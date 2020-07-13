@@ -3,13 +3,14 @@ FROM nixos/nix
 RUN apk update && apk add tzdata
 RUN cp /usr/share/zoneinfo/America/Phoenix /etc/localtime
 
-COPY . /root/Code/dotfiles
-WORKDIR /root/Code/dotfiles
-
 RUN nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
+RUN nix-channel --add https://github.com/rycee/home-manager/archive/master.tar.gz home-manager
 RUN nix-channel --update
-RUN nix-env --install --file default.nix
+RUN nix-shell '<home-manager>' -A install
 
+COPY . /root/Code/dotfiles
+RUN ln -sf /root/Code/dotfiles/dotfiles.nix /root/.config/nixpkgs/home.nix
+RUN home-manager switch
 WORKDIR /root
 
-CMD ["sleep", "infinity"]
+CMD [ "sleep", "infinity" ]
