@@ -1,11 +1,7 @@
-{ makeWrapper, symlinkJoin, tmux, tmuxPlugins }:
-  symlinkJoin {
-    name = "tmux";
-    buildInputs = [ makeWrapper ];
-    paths = [ tmux ];
-    postBuild = ''
-      wrapProgram "$out/bin/tmux" \
-        --add-flags "-f ${./tmux.conf}" \
-        --add-flags "-u"
-    '';
+{ config, pkgs, ... }:
+  {
+    programs.tmux = {
+      enable = true;
+      extraConfig = builtins.readFile ./tmux.conf;
+    };
   }

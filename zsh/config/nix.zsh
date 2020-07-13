@@ -1,3 +1,0 @@
-command -v nix >/dev/null || {
-	. "$HOME"/.nix-profile/etc/profile.d/nix.sh
-}

@@ -1,22 +1,36 @@
-{ pkgs ? import <nixpkgs> {} }:
-  pkgs.stdenv.mkDerivation {
-    name = "dotfiles";
-    src = [ ./. ];
-    installPhase = ''
-      # Clone repo into derivation
-      mkdir --parents $out/share/dotfiles
-      cp --recursive $src/* $out/share/dotfiles
+{ config, pkgs, ... }:
+  {
+    programs.home-manager.enable = true;
 
-      # Symlink all *.symlink files to $out/share
-      # E.g. $src/foo/bar.symlink -> $out/.bar
-      symlink_command='ln --force --symbolic {} $out/share/dotfiles/.$(basename {} .symlink)'
-      find $src -name '*.symlink' | xargs --replace={} --max-args=1 bash -c "''${symlink_command}"
+    home.username = "nutty";
+    home.homeDirectory = "/home/nutty";
+    home.stateVersion = "20.09";
+    home.packages = [
+      (pkgs.callPackage ./vim {})
 
-      # The $HOME variable is set to the path of this derivation in the wrapped
-      # git derivation. When neovim starts up, it attempts to create the
-      # following directory if it does not already exist, but throws an error
-      # because the nix store is read-only. Whenever I get around to migrating
-      # these dotfiles into home manager, I'll fix this.
-      mkdir --parents $out/share/dotfiles/.local/share/nvim
-    '';
+      pkgs.bash
+      pkgs.bat
+      pkgs.coreutils
+      pkgs.docker
+      pkgs.doctl
+      pkgs.emacs
+      pkgs.exa
+      pkgs.htop
+      pkgs.httpie
+      pkgs.jq
+      pkgs.kubectl
+      pkgs.less
+      pkgs.man-pages
+      pkgs.openssh
+      pkgs.pinentry-curses
+      pkgs.ps
+      pkgs.ripgrep
+    ];
+
+    imports = [
+      ./fish
+      ./git
+      ./gpg
+      ./tmux
+    ];
   }
