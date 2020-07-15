@@ -4,7 +4,7 @@
       enable = true;
       enableBashIntegration = true;
       enableFishIntegration = true;
-      defaultCommand = "${pkgs.ripgrep}/bin/rg --files --hidden --glob \"!.git/*\"";
+      defaultCommand = "${pkgs.ripgrep}/bin/rg --files --hidden --glob \"!.git\"";
       defaultOptions = [ "--multi" "--preview '${pkgs.bat}/bin/bat --color \"always\" {}'" ];
     };
 
