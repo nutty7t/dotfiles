@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
   {
     programs.home-manager.enable = true;
+    xdg.enable = true;
 
     home.username = "nutty";
     home.homeDirectory = "/home/nutty";
@@ -15,6 +16,8 @@
       pkgs.doctl
       pkgs.emacs
       pkgs.exa
+      pkgs.fd
+      pkgs.fontconfig
       pkgs.htop
       pkgs.httpie
       pkgs.jq
@@ -22,13 +25,13 @@
       pkgs.less
       pkgs.man-pages
       pkgs.openssh
-      pkgs.pinentry-curses
       pkgs.ps
       pkgs.ripgrep
     ];
 
     imports = [
       ./fish
+      ./fontconfig
       ./git
       ./gpg
       ./tmux
