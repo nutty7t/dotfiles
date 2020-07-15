@@ -4,7 +4,7 @@ xmap ga <Plug>(EasyAlign)
 " interactive motion
 nmap ga <Plug>(EasyAlign)
 
-" Allow quotes to be aligned.
+" allow quotes to be aligned
 let g:easy_align_delimiters = {
 \		'"': {
 \			'pattern': '"',

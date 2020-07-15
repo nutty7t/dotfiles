@@ -1,25 +1,16 @@
 FROM nixos/nix
 
-RUN apk update
-RUN nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
-RUN nix-channel --update
-
-# install nix packages
-COPY packages .
-RUN nix-env --install $(cat packages)
-RUN rm packages
-
-# setup dotfiles
-RUN apk add git sudo
-RUN git clone https://github.com/nutty7t/dotfiles ~/.dotfiles \
-	&& mkdir ~/Code \
-	&& ln -s ~/.dotfiles ~/Code/dotfiles \
-	&& cd ~/Code/dotfiles \
-	&& nix-shell --run "bash ./setup.sh"
-
-# set timezone
-RUN apk add tzdata
+RUN apk update && apk add tzdata
 RUN cp /usr/share/zoneinfo/America/Phoenix /etc/localtime
 
+RUN nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
+RUN nix-channel --add https://github.com/rycee/home-manager/archive/master.tar.gz home-manager
+RUN nix-channel --update
+RUN nix-shell '<home-manager>' -A install
+
+COPY . /root/Code/dotfiles
+RUN ln -sf /root/Code/dotfiles/dotfiles.nix /root/.config/nixpkgs/home.nix
+RUN home-manager switch
 WORKDIR /root
-CMD ["sleep", "infinity"]
+
+CMD [ "sleep", "infinity" ]

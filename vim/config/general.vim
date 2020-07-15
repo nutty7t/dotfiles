@@ -5,7 +5,7 @@
 	set autowriteall " automatically save all files
 	set autoread     " automatically reload files
 
-	if has('persistent_undo')
+	if has('persistent_undo') && $HOME == '/home/nutty'
 		silent call mkdir(expand('~') . '/Code/undodir', 'p')
 		set undodir=~/Code/undodir
 		set undofile
@@ -26,7 +26,7 @@
 
 	" Tabs for semantic indentation.
 	" Spaces for presentational indentation.
-	" But EditorConfig is the supreme being.
+	" But EditorConfig trumps all.
 
 	set smarttab     " >9000 IQ
 	set tabstop=4    " set tab width
@@ -60,10 +60,6 @@
 " }
 
 " Mappings {
-	" escape from the home row
-	inoremap fd <ESC>
-	vnoremap fd <ESC>
-
 	" leader key
 	let mapleader=" "
 
