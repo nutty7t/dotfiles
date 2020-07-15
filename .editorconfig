@@ -8,7 +8,7 @@ insert_final_newline = true
 indent_style = tab
 indent_size = 2
 
-[*.{vim,sh,zsh,symlink}]
+[*.{vim,sh,fish,symlink}]
 indent_style = tab
 indent_size = 2
 
