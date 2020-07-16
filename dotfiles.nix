@@ -36,6 +36,7 @@
     ];
 
     imports = [
+      ./emacs
       ./fish
       ./fontconfig
       ./git

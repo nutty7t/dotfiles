@@ -11,6 +11,10 @@ RUN nix-shell '<home-manager>' -A install
 COPY . /root/Code/dotfiles
 RUN ln -sf /root/Code/dotfiles/dotfiles.nix /root/.config/nixpkgs/home.nix
 RUN home-manager switch
+
+RUN git clone --depth 1 https://github.com/hlissner/doom-emacs /root/.emacs.d
+RUN /root/.emacs.d/bin/doom --yes install
+
 WORKDIR /root
 
 CMD [ "sleep", "infinity" ]
