@@ -50,9 +50,17 @@
         mv = "mv --interactive --verbose";
         mkdir = "mkdir --parents --verbose";
 
+        g = "git";
+        ga = "git add";
+        gc = "git commit --verbose";
+        "gc!" = "git commit --verbose --amend";
+        gp = "git push";
+        gco = "git checkout";
+        gst = "git status";
+        glog = "git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'";
+
         d = "docker";
         do = "doctl";
-        g = "git";
         h = "helm";
         k = "kubectl";
         t = "tmux";
