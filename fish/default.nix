@@ -66,9 +66,7 @@
         t = "tmux";
         xp = "explorer.exe .";
         vimf = "vim (fzf)";
-
-        dot = "cd ~/Code/dotfiles";
-        dots = "home-manager switch";
+        dotfiles = "cd ~/Code/dotfiles";
       };
 
       shellInit = builtins.concatStringsSep "\n" ([
