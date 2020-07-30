@@ -35,8 +35,10 @@ nix-channel --update
 3. Install dotfiles.
 
 ``` bash
-nix-shell -p git --run "git clone https://github.com/nutty7t/dotfiles" ~/Code/dotfiles
+mkdir --parents ~/Code
+nix-shell -p git --run "git clone https://github.com/nutty7t/dotfiles ~/Code/dotfiles"
 ln --symbolic --force ~/Code/dotfiles/dotfiles.nix ~/.config/nixpkgs/home.nix
+nix-shell '<home-manager>' -A install
 home-manager switch
 ```
 
