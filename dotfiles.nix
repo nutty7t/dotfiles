@@ -18,6 +18,7 @@
       pkgs.exa
       pkgs.fd
       pkgs.fontconfig
+      pkgs.glibcLocales
       pkgs.htop
       pkgs.httpie
       pkgs.jq
