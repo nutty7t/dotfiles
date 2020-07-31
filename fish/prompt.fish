@@ -2,7 +2,7 @@ function fish_prompt
 	echo
 	nix_shell_prompt
 
-	set_color yellow
+	set_color green
 	printf '%s' (prompt_pwd)
 	set_color normal
 
