@@ -80,6 +80,8 @@
         ''
       ] ++ map builtins.readFile [
         ../emacs/path.fish
+        ../fish/greeting.fish
+        ../fish/prompt.fish
         ../gpg/variables.fish
         ../x11/windows.fish
       ]);
