@@ -9,6 +9,15 @@
 (setq user-full-name "nutty7t"
       user-mail-address "blackhole@nutty.email")
 
+;; Auto-discover project directories.
+(setq projectile-project-search-path '("~/Code/"))
+
+;; Always show line numbers.
+(global-display-line-numbers-mode)
+
+;; Don't show line numbers in treemacs.
+(add-hook 'treemacs-mode-hook (lambda() (display-line-numbers-mode -1)))
+
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
 ;;
