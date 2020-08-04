@@ -18,6 +18,9 @@
 ;; Don't show line numbers in treemacs.
 (add-hook 'treemacs-mode-hook (lambda() (display-line-numbers-mode -1)))
 
+(setq epa-pinentry-mode 'loopback)
+(pinentry-start)
+
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
 ;;

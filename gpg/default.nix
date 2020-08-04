@@ -8,6 +8,10 @@
       enable = true;
       defaultCacheTtl = 1800;
       enableSshSupport = true;
-      pinentryFlavor = "curses";
+      pinentryFlavor = "emacs";
+      extraConfig = ''
+        allow-emacs-pinentry
+        allow-loopback-pinentry
+      '';
     };
   }
