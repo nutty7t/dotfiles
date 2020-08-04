@@ -4,6 +4,10 @@
       enable = true;
     };
 
+    programs.ssh = {
+      enable = true;
+    };
+
     services.gpg-agent = {
       enable = true;
       defaultCacheTtl = 1800;
