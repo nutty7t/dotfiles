@@ -10,6 +10,9 @@
       enableSshSupport = true;
       pinentryFlavor = "emacs";
       extraConfig = ''
+        # fallback to curses if emacs pinentry is not available
+        pinentry-program ${pkgs.pinentry-curses}/bin/pinentry
+
         allow-emacs-pinentry
         allow-loopback-pinentry
       '';
