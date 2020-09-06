@@ -3,7 +3,8 @@
 set --export GPG_TTY (tty)
 
 # Authorize SSH with GPG key.
-set keygrip BDA0F0D14EC318874C7872020155BE3371806A42
-cat ~/.gnupg/sshcontrol | grep $keygrip > /dev/null; or echo $keygrip >> ~/.gnupg/sshcontrol
-pgrep ssh-agent > /dev/null; or eval (ssh-agent -c)
+set keygrip 2488D6BC80912B868503FADA03341331CAE89FA7
+cat ~/.gnupg/sshcontrol | grep $keygrip >/dev/null; or echo $keygrip >>~/.gnupg/sshcontrol
+
+pgrep ssh-agent >/dev/null; or eval (ssh-agent -c)
 gpgconf --launch gpg-agent
