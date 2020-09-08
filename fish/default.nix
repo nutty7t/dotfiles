@@ -82,7 +82,7 @@
         ../emacs/path.fish
         ../fish/greeting.fish
         ../fish/prompt.fish
-        ../gpg/variables.fish
+        ../gpg/bootstrap.fish
         ../x11/windows.fish
       ]);
     };
