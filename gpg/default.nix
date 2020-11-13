@@ -12,6 +12,7 @@
       enable = true;
       defaultCacheTtl = 1800;
       enableSshSupport = true;
+      enableScDaemon = false;
       pinentryFlavor = "emacs";
       extraConfig = ''
         # fallback to curses if emacs pinentry is not available
