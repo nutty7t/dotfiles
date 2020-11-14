@@ -11,6 +11,7 @@
 
       pkgs.bash
       pkgs.bat
+      pkgs.bitwarden-cli
       pkgs.coreutils
       pkgs.docker
       pkgs.doctl
