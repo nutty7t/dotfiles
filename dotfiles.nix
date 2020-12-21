@@ -30,12 +30,6 @@
       pkgs.ps
       pkgs.ripgrep
       pkgs.wget
-
-      pkgs.iosevka
-      pkgs.emacs-all-the-icons-fonts
-      pkgs.material-design-icons
-      pkgs.weather-icons
-      pkgs.font-awesome
     ];
 
     imports = [
