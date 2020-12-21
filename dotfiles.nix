@@ -38,6 +38,7 @@
       ./fontconfig
       ./git
       ./gpg
+      ./lang/haskell
       ./tmux
     ];
   }
