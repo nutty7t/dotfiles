@@ -46,16 +46,14 @@
   # services.printing.enable = true;
 
   # Enable sound.
-  # sound.enable = true;
-  # hardware.pulseaudio.enable = true;
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
+  sound.enable = true;
+  hardware.pulseaudio.enable = true;
+  nixpkgs.config.pulseaudio = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.nutty = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "audio" "wheel" ]; # Enable ‘sudo’ for the user.
     shell = pkgs.fish;
   };
 
@@ -65,6 +63,8 @@
   environment.systemPackages = with pkgs; [
     discord
     firefox
+    lxqt.pavucontrol-qt
+    pulsemixer
     st
   ];
 
