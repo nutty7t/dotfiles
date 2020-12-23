@@ -71,7 +71,12 @@
 
       shellInit = builtins.concatStringsSep "\n" ([
         ''
-          fenv source ~/.nix-profile/etc/profile.d/nix.sh 2> /dev/null
+          # If we're not in NixOS, then start up a Nix environment.
+          if not grep --ignore-case "nixos" /proc/version &> /dev/null
+            fenv source ~/.nix-profile/etc/profile.d/nix.sh 2> /dev/null
+          end
+
+          # Set home manager session variables.
           fenv source ~/.nix-profile/etc/profile.d/hm-session-vars.sh
 
           # $TMUX_TMPDIR gets set by home manager, but it seems to break tmux.
