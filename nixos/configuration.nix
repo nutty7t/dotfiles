@@ -89,10 +89,12 @@
       enable = true;
       enableContribAndExtras = true;
       extraPackages = haskellPackages: [
+        haskellPackages.containers
         haskellPackages.xmonad-contrib
         haskellPackages.xmonad-extras
         haskellPackages.xmonad
       ];
+      config = pkgs.lib.readFile ../xmonad/Main.hs;
     };
   };
 
