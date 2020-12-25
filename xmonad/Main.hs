@@ -45,7 +45,7 @@ myWorkspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 -- Border colors for unfocused and focused windows, respectively.
 myNormalBorderColor :: String
-myNormalBorderColor = "#333333"
+myNormalBorderColor = "#222222"
 
 myFocusedBorderColor :: String
 myFocusedBorderColor = "#0000ff"
