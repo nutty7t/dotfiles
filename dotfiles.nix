@@ -35,7 +35,6 @@
     imports = [
       ./emacs
       ./fish
-      ./fontconfig
       ./git
       ./gpg
       ./lang/haskell
