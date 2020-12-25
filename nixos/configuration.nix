@@ -65,7 +65,7 @@
     firefox
     lxqt.pavucontrol-qt
     pulsemixer
-    st
+    (st.override { conf = builtins.readFile ../st/config.h; })
   ];
 
   fonts.fonts = with pkgs; [
