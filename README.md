@@ -2,6 +2,10 @@
 
 ![neofetch](https://user-images.githubusercontent.com/40926021/71704201-1cd09f00-2d96-11ea-8c0d-9f0e8821a64f.png)
 
+## NixOS
+
+> TODO
+
 ## Windows
 
 > Windows Subsystem for Linux (WSL) makes the development experience on this
@@ -14,7 +18,7 @@
 
 2. Install [Nix] ❆.
 
-``` bash
+``` sh
 sudo apt update
 sudo apt upgrade
 sudo apt install curl xz-utils
@@ -34,7 +38,7 @@ nix-channel --update
 
 3. Install dotfiles.
 
-``` bash
+``` sh
 mkdir --parents ~/Code
 nix-shell -p git --run "git clone https://github.com/nutty7t/dotfiles ~/Code/dotfiles"
 ln --symbolic --force ~/Code/dotfiles/dotfiles.nix ~/.config/nixpkgs/home.nix
@@ -44,16 +48,9 @@ home-manager switch
 
 4. Set `fish` as the default shell.
 
-``` bash
+``` sh
 echo $(which fish) | sudo tee -a /etc/shells
 chsh -s $(which fish)
-```
-
-5. Become evil? Join the dark side. 🖤
-
-``` bash
-git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
-~/.emacs.d/bin/doom install
 ```
 
 ## Docker
@@ -62,7 +59,7 @@ git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
 > them out in a sandboxed environment without messing up your own system. It
 > also means that it's easy to deploy my development environment [in the cloud].
 
-``` bash
+``` sh
 # Download the image
 docker pull nutty7t/dotfiles:latest
 

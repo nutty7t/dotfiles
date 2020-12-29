@@ -1,14 +1,22 @@
 { config, pkgs, ... }:
-  {
-    home.file.".doom.d/init.el".text = builtins.readFile ./doom.d/init.el;
-    home.file.".doom.d/config.el".text = builtins.readFile ./doom.d/config.el;
-    home.file.".doom.d/packages.el".text = builtins.readFile ./doom.d/packages.el;
+  let
+    doom-emacs = pkgs.callPackage (builtins.fetchTarball {
+      url = https://github.com/vlaci/nix-doom-emacs/archive/master.tar.gz;
+    }) {
+      doomPrivateDir = ./doom.d;
+    };
+  in
+    {
+      home.file.".emacs.d/init.el".text = ''
+        (load "default.el")
+      '';
 
-    home.packages = [
-      pkgs.iosevka
-      pkgs.emacs-all-the-icons-fonts
-      pkgs.material-design-icons
-      pkgs.weather-icons
-      pkgs.font-awesome
-    ];
-  }
+      home.packages = [
+        doom-emacs
+        pkgs.iosevka
+        pkgs.emacs-all-the-icons-fonts
+        pkgs.material-design-icons
+        pkgs.weather-icons
+        pkgs.font-awesome
+      ];
+    }

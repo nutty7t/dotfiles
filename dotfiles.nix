@@ -15,7 +15,6 @@
       pkgs.coreutils
       pkgs.docker
       pkgs.doctl
-      pkgs.emacs
       pkgs.exa
       pkgs.fd
       pkgs.fontconfig

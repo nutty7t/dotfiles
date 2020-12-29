@@ -84,7 +84,7 @@
           set --erase TMUX_TMPDIR
         ''
       ] ++ map builtins.readFile [
-        ../emacs/path.fish
+        ../emacs/hack.fish
         ../fish/greeting.fish
         ../fish/prompt.fish
         ../gpg/bootstrap.fish
