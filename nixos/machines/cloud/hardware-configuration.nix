@@ -28,6 +28,11 @@
       fsType = "ext4";
     };
 
+  fileSystems."/data/postgresql" =
+    { device = "ssd/data/postgresql";
+      fsType = "zfs";
+    };
+
   swapDevices = [ ];
 
 }
