@@ -55,5 +55,5 @@
     shell = pkgs.fish;
   };
 
-  home-manager.users.nutty = import ../../dotfiles.nix;
+  home-manager.users.nutty = import ../../../dotfiles.nix;
 }
