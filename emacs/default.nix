@@ -14,6 +14,7 @@
       home.packages = [
         doom-emacs
         pkgs.iosevka
+        pkgs.jetbrains-mono
         pkgs.emacs-all-the-icons-fonts
         pkgs.material-design-icons
         pkgs.weather-icons

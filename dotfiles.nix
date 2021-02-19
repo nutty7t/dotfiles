@@ -1,4 +1,8 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
+let
+  osInfo = builtins.readFile /etc/os-release;
+  isNixOS = builtins.match ".*([Nn]ix).*" osInfo != null;
+in
   {
     programs.home-manager.enable = true;
     xdg.enable = true;
@@ -38,5 +42,9 @@
       ./gpg
       ./lang/haskell
       ./tmux
+    ] ++ lib.optionals (!isNixOS) [
+      # Only use fontconfig if we're not in NixOS.
+      # NixOS can manage fonts by itself.
+      ./fontconfig
     ];
   }
