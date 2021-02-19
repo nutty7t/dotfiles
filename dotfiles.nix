@@ -5,6 +5,7 @@ let
 in
   {
     programs.home-manager.enable = true;
+    nixpkgs.config.allowUnfree = true;
     xdg.enable = true;
 
     home.username = "nutty";
@@ -33,6 +34,10 @@ in
       pkgs.ps
       pkgs.ripgrep
       pkgs.wget
+
+      pkgs.jetbrains.datagrip
+      pkgs.jetbrains.idea-ultimate
+      pkgs.jetbrains.webstorm
     ];
 
     imports = [
