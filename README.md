@@ -73,11 +73,9 @@ docker run --hostname nuttydots -it nutty7t/dotfiles fish
 
 ## Troubleshooting
 
-> Occassionally, I get random `Segmentation fault (core dumped)` or `unable to
-> fork: Invalid argument` errors in Windows Subsystem for Linux. What's up?
+> The clipboard sharing in X410 does not work.
 
-Make sure that your system has a good amount of available RAM. You can
-[click here to download RAM].
+Make sure that the VSOCK (Hyper-V) Windows feature is enabled. 
 
 <!-- References -->
 [Windows Subsystem for Linux]: https://docs.microsoft.com/en-us/windows/wsl/install-win10
