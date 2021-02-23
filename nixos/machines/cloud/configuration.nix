@@ -8,6 +8,7 @@
     [
       <home-manager/nixos>
       ./hardware-configuration.nix
+      ./secrets.nix
     ];
 
   system.stateVersion = "20.09";
@@ -47,7 +48,7 @@
   };
 
   boot.supportedFilesystems = [ "zfs" ];
-  environment.systemPackages = with pkgs; [ zfs ];
+  environment.systemPackages = with pkgs; [ gnupg zfs ];
 
   users.users.nutty = {
     isNormalUser = true;
