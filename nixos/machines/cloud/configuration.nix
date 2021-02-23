@@ -13,6 +13,7 @@
 
   system.stateVersion = "20.09";
   time.timeZone = "America/Phoenix";
+  deployment.targetHost = "157.90.88.170";
 
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;

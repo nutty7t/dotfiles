@@ -30,6 +30,7 @@ in
       pkgs.kubectl
       pkgs.less
       pkgs.man-pages
+      pkgs.nixops
       pkgs.openssh
       pkgs.ps
       pkgs.ripgrep
