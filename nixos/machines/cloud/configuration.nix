@@ -7,7 +7,9 @@
   imports =
     [
       <home-manager/nixos>
+      ./acme.nix
       ./hardware-configuration.nix
+      ./gitea.nix
       ./secrets.nix
     ];
 
@@ -32,6 +34,7 @@
   networking.usePredictableInterfaceNames = false;
   networking.interfaces.eth0.useDHCP = false;
   networking.useDHCP = false;
+  networking.firewall.allowedTCPPorts = [ 22 80 443 ];
 
   systemd.network = {
     enable = true;
@@ -58,6 +61,8 @@
   };
 
   home-manager.users.nutty = import ../../../dotfiles.nix;
+
+  services.nginx.enable = true;
 
   services.postgresql.enable = true;
   services.postgresql.package = pkgs.postgresql_12;
