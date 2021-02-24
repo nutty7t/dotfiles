@@ -1,0 +1,61 @@
+#!/usr/bin/env fish
+
+function show_help_text
+	echo "usage: mischief-managed {help|encrypt|decrypt|check}"
+	exit 1
+end
+
+function filter
+	set cond $argv[1]
+	set list $argv[2..-1]
+	for element in $list
+		if $cond $element
+			echo $element
+		end
+	end
+end
+
+function is_encrypted
+	grep -q "sops" $argv
+end
+
+function is_decrypted
+	not is_encrypted $argv
+end
+
+set git_root (git rev-parse --show-toplevel)
+set secrets (find $git_root -type f -wholename "*/secrets/*")
+set encrypted_secrets (filter is_encrypted $secrets)
+set decrypted_secrets (filter is_decrypted $secrets)
+
+function check_secrets
+	for secret in $decrypted_secrets
+		echo "$secret is not encrypted"
+		false
+	end
+end
+
+function decrypt_secrets
+	for secret in $encrypted_secrets
+		sops -d -i $secret
+	end
+end
+
+function encrypt_secrets
+	for secret in $decrypted_secrets
+		sops -e -i -p 6CA54B7A2A23A66A $secret
+	end
+end
+
+switch $argv[1]
+	case help
+		show_help_text
+	case encrypt
+		encrypt_secrets
+	case decrypt
+		decrypt_secrets
+	case '*'
+		# default behavior:
+		# git pre-commit hook
+		check_secrets
+end
