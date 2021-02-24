@@ -34,6 +34,7 @@ in
       pkgs.openssh
       pkgs.ps
       pkgs.ripgrep
+      pkgs.sops
       pkgs.wget
 
       pkgs.jetbrains.datagrip
